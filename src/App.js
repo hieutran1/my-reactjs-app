@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {RouterRoute, RouterLink} from 'reactjs-router';
 
-class App extends Component {
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -10,10 +12,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-          <br/> my test
-        </p>
+        <div>
+          <RouterLink title="Calculator" href="/">Calculator</RouterLink>
+          <RouterLink title="Caro game" href="/caro">Caro Game</RouterLink>
+
+          <RouterRoute url="/" title="Calculator">
+              <div className="calculator">
+                <Display value={this.state.next || this.state.total || '0'} />
+                <ButtonPanel clickHandler={this.handleClick} />
+              </div>
+          </RouterRoute>
+          <RouterRoute url="/caro" title="Caro Game">
+            <div className="caro">
+              <TicTacToeGame />
+            </div>
+          </RouterRoute>
+        </div>
       </div>
     );
   }
