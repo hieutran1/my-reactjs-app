@@ -6,10 +6,12 @@ class TicTacToeGame extends React.Component {
     super(props);
     this.state = {
       history: [{
+        id: 0,
         squares: Array(9).fill(null),
       }],
       stepNumber: 0,
       xIsNext: true,
+      sortHistory: 'Ascending'
     }
   }
 
@@ -24,10 +26,17 @@ class TicTacToeGame extends React.Component {
     squares[i] = this.state.xIsNext ? 'X': 'O';
     this.setState({
       history: history.concat([{
+        id: this.state.stepNumber + 1,
         squares: squares,
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
+    });
+  }
+
+  sortHistory() {
+    this.setState({
+      sortHistory: (this.state.sortHistory === 'Ascending' ? 'Descending': 'Ascending')
     });
   }
 
@@ -39,18 +48,22 @@ class TicTacToeGame extends React.Component {
   }
 
   render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const currentSort = this.state.sortHistory;
+    const currentHistory = this.state.history.slice();
+    const current = currentHistory[this.state.stepNumber];
+    const history = currentHistory.sort(function(item1, item2){
+      return currentSort === 'Ascending' ? item1.id - item2.id : item2.id - item1.id;
+    });
     const winner = calculateWinner(current.squares);
 
     // showing the moves
-    const moves = history.map((step, move) => {
-      const desc = move ?
-        'Go to move #' + move :
+    const moves = history.map((step) => {
+      const desc = step.id ?
+        'Go to move #' + step.id :
         'Go to game start';
       return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        <li key={step.id}>
+          <button className={this.state.stepNumber === step.id ? 'selected':''} onClick={() => this.jumpTo(step.id)}>{desc}</button>
         </li>
       );
     });
@@ -67,11 +80,15 @@ class TicTacToeGame extends React.Component {
         <div className="game-board">
           <Board 
             squares={current.squares}
-            onClick={(i) => this.handleClick(i)}/>
+            onClick={(i) => this.handleClick(i)}
+            winner={winner}/>
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <div>
+            <a href="#" onClick={() => this.sortHistory()}>{this.state.sortHistory}</a>
+            <ol className="history">{moves}</ol>
+          </div>
         </div>
       </div>
       
@@ -95,7 +112,7 @@ function calculateWinner(squares) {
   for(let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return [a, b, c];
     }    
   }
   return null;

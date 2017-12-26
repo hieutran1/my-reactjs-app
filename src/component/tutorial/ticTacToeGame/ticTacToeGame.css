@@ -38,6 +38,10 @@ ol, ul {
   outline: none;
 }
 
+.square.win {
+  background-color: darkcyan;
+}
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }
@@ -49,4 +53,8 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.game-info .history .selected {
+  background-color: rgb(164, 231, 38);
 }
