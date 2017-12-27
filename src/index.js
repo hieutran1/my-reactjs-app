@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
 import Calculator from './component/tutorial/calculator/Calculator'
+import TutorialRouter from './component/tutorial/TutorialRouter'
 
 const Home = () => (
   <div>
@@ -62,8 +63,9 @@ const BasicExample = () => (
 
       <Route exact path="/" component={Home}/>
       <Route path="/topics" component={Topics}/>
-      <Route path="/caro" component={ TicTacToeGame }/>
-      <Route path="/calculator" component={ Calculator }/>
+      {/* <Route path="/caro" component={ TicTacToeGame }/>
+      <Route path="/calculator" component={ Calculator }/> */}
+      <TutorialRouter />
     </div>
   </Router>
 )
