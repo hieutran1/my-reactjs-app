@@ -1,6 +1,8 @@
 import React from 'react';
 import Board from './Board';
 
+import './TicTacToeGame.css'
+
 class TicTacToeGame extends React.Component {
   constructor(props) {
     super(props);

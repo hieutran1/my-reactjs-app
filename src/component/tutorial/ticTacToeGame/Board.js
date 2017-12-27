@@ -9,7 +9,7 @@ class Board extends React.Component {
       key={i}
       value={this.props.squares[i]}
       onClick={() => this.props.onClick(i)}
-      classWin = { winner && winner.indexOf(i) >= 0 ? 'win' : '' }
+      classWin={ winner && winner.indexOf(i) >= 0 ? 'win' : '' }
     />
     );
   };

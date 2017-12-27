@@ -1,13 +1,11 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate';
-import TicTacToeGame from './tutorial/ticTacToeGame/TicTacToeGame';
+import calculate from '../../logic/calculate';
 
-import './tutorial/ticTacToeGame/ticTacToeGame.css';
-import './App.css';
+import './Calculator.css'
 
-class App extends React.Component {
+class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,11 +30,8 @@ class App extends React.Component {
             clickHandler={this.handleClick}
           />
         </div>
-        <div className="caro">
-          <TicTacToeGame />
-        </div>
       </div>
     );
   }
 }
-export default App;
+export default Calculator;
