@@ -1,4 +1,6 @@
-# install react generaor
+# React generaor
 ## npm install -g create-react-app
 
-# React-Router : https://reacttraining.com/react-router/web/guides/quick-start
+# React-Router
+## Guide: https://reacttraining.com/react-router/web/guides/quick-start
+

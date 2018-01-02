@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import TicTacToeGame from './ticTacToeGame/TicTacToeGame'
 import Calculator from './calculator/Calculator'
 

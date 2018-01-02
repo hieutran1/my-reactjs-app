@@ -8,6 +8,7 @@ import {
 import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
 import Calculator from './component/tutorial/calculator/Calculator'
 import TutorialRouter from './component/tutorial/TutorialRouter'
+import ThinkInReactRouter from './component/thinkInReact/ThinkInReactRouter';
 
 const Home = () => (
   <div>
@@ -57,6 +58,7 @@ const BasicExample = () => (
         <li><Link to="/topics">Topics</Link></li>
         <li><Link to="/calculator">calculator</Link></li>
         <li><Link to="/caro">Caro</Link></li>
+        <li><Link to="/product">Products</Link></li>
       </ul>
 
       <hr/>
@@ -66,6 +68,7 @@ const BasicExample = () => (
       {/* <Route path="/caro" component={ TicTacToeGame }/>
       <Route path="/calculator" component={ Calculator }/> */}
       <TutorialRouter />
+      <ThinkInReactRouter />
     </div>
   </Router>
 )
