@@ -4,3 +4,5 @@
 # React-Router
 ## Guide: https://reacttraining.com/react-router/web/guides/quick-start
 
+# Integrate React & Redux
+## Guide: npm install --save react-redux

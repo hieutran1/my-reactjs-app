@@ -9,6 +9,7 @@ import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
 import Calculator from './component/tutorial/calculator/Calculator'
 import TutorialRouter from './component/tutorial/TutorialRouter'
 import ThinkInReactRouter from './component/thinkInReact/ThinkInReactRouter';
+import ReactReduxRouter from './component/reactRedux/ReactReduxRouter'
 
 const Home = () => (
   <div>
@@ -50,7 +51,7 @@ const Topics = ({ match }) => (
   </div>
 )
 
-const BasicExample = () => (
+const MyReactApp = () => (
   <Router>
     <div>
       <ul>
@@ -59,23 +60,23 @@ const BasicExample = () => (
         <li><Link to="/calculator">calculator</Link></li>
         <li><Link to="/caro">Caro</Link></li>
         <li><Link to="/product">Products</Link></li>
+        <li><Link to="/react-redux">React Redux</Link></li>
       </ul>
 
       <hr/>
 
       <Route exact path="/" component={Home}/>
       <Route path="/topics" component={Topics}/>
-      {/* <Route path="/caro" component={ TicTacToeGame }/>
-      <Route path="/calculator" component={ Calculator }/> */}
       <TutorialRouter />
       <ThinkInReactRouter />
+      <ReactReduxRouter />
     </div>
   </Router>
 )
 
-export default BasicExample
+export default MyReactApp
 
 ReactDOM.render(
-  <BasicExample />,
+  <MyReactApp />,
   document.getElementById('root')
 );
