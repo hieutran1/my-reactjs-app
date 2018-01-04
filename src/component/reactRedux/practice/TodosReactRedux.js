@@ -57,6 +57,24 @@ const store = createStore(todoApp);
 
 const { Component } = React;
 
+const Footer = () => (
+  <p>
+    Show:
+    {' '}
+    <FilterLink filter="SHOW_ALL">
+      All
+    </FilterLink>
+    {', '}
+    <FilterLink filter="SHOW_ACTIVE">
+      Active
+    </FilterLink>
+    {', '}
+    <FilterLink filter="SHOW_COMPLETED">
+      Completed
+    </FilterLink>
+  </p>
+);
+
 const Todo = ({
   onClick,
   completed,
@@ -88,6 +106,34 @@ const TodoList = ({
     )}
   </ul>
 );
+
+const AddTodo = ({ dispatch }) => {
+  let input
+
+  return (
+    <div>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          if (!input.value.trim()) {
+            return
+          }
+          dispatch(addTodo(input.value))
+          input.value = ''
+        }}
+      >
+        <input
+          ref={node => {
+            input = node
+          }}
+        />
+        <button type="submit">
+          Add Todo
+        </button>
+      </form>
+    </div>
+  )
+}
 
 let nextTodoId = 0;
 class TodoApp extends Component {
@@ -127,6 +173,15 @@ class TodoApp extends Component {
             </li>
           )}
         </ul>
+        <TodoList 
+          todos={visibleTodos}
+          onTodoClick={id => 
+            store.dispatch({
+              type: 'TOGGLE_TODO',
+              id
+            })
+          }
+        />
         <p>
         Show:
         {' '}
@@ -146,6 +201,53 @@ class TodoApp extends Component {
     )
   }
 }
+
+class Provider extends Component {
+  getChildContex() {
+    return {
+      store: this.props.store
+    }
+  }
+
+  render() {
+    return this.props.children;
+  }
+}
+Provider.childContextTypes = {
+  store: React.PropTypes.object
+}
+
+const { Provider } = ReactRedux;
+// import { Provider } from 'react-redux' // ES 6
+// var Provider = require('react-redux').Provider // ES5
+
+
+/**  */
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(
+      state.todos,
+      state.visibilityFilter
+    )
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch({
+        type: 'TOGGLE_TODO',
+        id
+      })
+    }
+  };
+};
+
+const {connect } = ReactRedux;
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);
 
 const render = () => {
   ReactDOM.render(
