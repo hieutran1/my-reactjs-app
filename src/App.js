@@ -1,42 +1,35 @@
-import React from 'react';
-import Display from './Display';
-import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate';
-import TicTacToeGame from './tutorial/ticTacToeGame/TicTacToeGame';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
+import Calculator from './component/tutorial/calculator/Calculator'
+import TutorialRouter from './component/tutorial/TutorialRouter'
+import ThinkInReactRouter from './component/thinkInReact/ThinkInReactRouter';
+import { ReactReduxRouter } from './component/reactRedux/ReactReduxRouter'
+import ReactMobxRouter from "./component/reactMobx/ReactMobxRouter";
 
-import './tutorial/ticTacToeGame/ticTacToeGame.css';
-import './App.css';
+export const App = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/calculator">calculator</Link></li>
+        <li><Link to="/caro">Caro</Link></li>
+        <li><Link to="/product">Products</Link></li>
+        <li><Link to="/react-redux">React Redux</Link></li>
+        <li><Link to="/react-mobx-todos">React Mobx Todos</Link></li>
+        <li><Link to="/react-mobx-timer">React Mobx Timer</Link></li>
+      </ul>
+      <hr/>
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-  }
-
-  handleClick = (buttonName) => {
-    this.setState(calculate(this.state, buttonName));
-  }
-
-  render() {
-    return (
-      <div className="component-app">
-        <div className="calculator">
-          <Display
-            value={this.state.next || this.state.total || '0'}
-          />
-          <ButtonPanel
-            clickHandler={this.handleClick}
-          />
-        </div>
-        <div className="caro">
-          <TicTacToeGame />
-        </div>
-      </div>
-    );
-  }
-}
-export default App;
+      <TutorialRouter />
+      <ThinkInReactRouter />
+      <ReactReduxRouter />
+      <ReactMobxRouter />
+    </div>
+  </Router>
+);
