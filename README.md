@@ -6,3 +6,11 @@
 
 # Integrate React & Redux
 ## Guide: npm install --save react-redux
+
+# Integrate React & Mobx (State management)
+## npm install mobx --save
+## npm install mobx-react --save
+
+# Install support decorators:
+## npm i --save-dev babel-plugin-transform-decorators-legacy
+

@@ -12,9 +12,12 @@ import todoApp from './reducers'
 import App from './components/App'
 
 let store = createStore(todoApp)
-const ReactReduxRouter = () => (
+const ReactRedux = () => (
   <Provider store={store} >
     <App /> 
   </Provider>
 )
-export default ReactReduxRouter;
+
+export const ReactReduxRouter = () => (
+  <Route path='/react-redux' component={ReactRedux} /> 
+);

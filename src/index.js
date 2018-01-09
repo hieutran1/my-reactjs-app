@@ -9,7 +9,8 @@ import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
 import Calculator from './component/tutorial/calculator/Calculator'
 import TutorialRouter from './component/tutorial/TutorialRouter'
 import ThinkInReactRouter from './component/thinkInReact/ThinkInReactRouter';
-import ReactReduxRouter from './component/reactRedux/ReactReduxRouter'
+import { ReactReduxRouter } from './component/reactRedux/ReactReduxRouter'
+import ReactMobxRouter from "./component/reactMobx/ReactMobxRouter";
 
 const Home = () => (
   <div>
@@ -61,6 +62,8 @@ const MyReactApp = () => (
         <li><Link to="/caro">Caro</Link></li>
         <li><Link to="/product">Products</Link></li>
         <li><Link to="/react-redux">React Redux</Link></li>
+        <li><Link to="/react-mobx-todos">React Mobx Todos</Link></li>
+        <li><Link to="/react-mobx-timer">React Mobx Timer</Link></li>
       </ul>
 
       <hr/>
@@ -70,6 +73,7 @@ const MyReactApp = () => (
       <TutorialRouter />
       <ThinkInReactRouter />
       <ReactReduxRouter />
+      <ReactMobxRouter />
     </div>
   </Router>
 )
