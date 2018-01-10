@@ -17,3 +17,10 @@
 # Analyzing the Bundle Size
 ## npm run build
 ## npm run analyze
+
+# Adding a CSS Preprocessor(SASS, LESS etc.)
+## npm install --save node-sass-chokidar
+## npm install --save npm-run-all
+
+# Adding Bootstrap
+## npm install --save react-bootstrap bootstrap@3

@@ -1,3 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .configs {
   li {
     margin: 15px 0px;
