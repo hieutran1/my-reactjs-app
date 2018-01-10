@@ -14,3 +14,6 @@
 # Install support decorators:
 ## npm i --save-dev babel-plugin-transform-decorators-legacy
 
+# Analyzing the Bundle Size
+## npm run build
+## npm run analyze

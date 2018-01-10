@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  BrowserRouter
 } from 'react-router-dom'
 import TicTacToeGame from './component/tutorial/ticTacToeGame/TicTacToeGame'
 import Calculator from './component/tutorial/calculator/Calculator'
@@ -16,6 +17,7 @@ export const App = () => (
   <Router>
     <div>
       <ul>
+        <BrowserRouter basename="/" />
         <li><Link to="/">Home</Link></li>
         <li><Link to="/calculator">calculator</Link></li>
         <li><Link to="/caro">Caro</Link></li>
