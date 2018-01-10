@@ -1,13 +1,18 @@
 import React from 'react'
 import {observable} from 'mobx';
 import {observer} from 'mobx-react';
+import { Navbar, Jumbotron, Button } from "react-bootstrap"
 
 @observer
 class TimerView extends React.Component {
     render() {
-        return (<button onClick={this.onReset.bind(this)}>
+        return (
+        <Button
+            bsStyle="success"
+            bsSize="large"
+            onClick={this.onReset.bind(this)}>
                 Seconds passed: {this.props.appState.timer}
-            </button>);
+            </Button>);
     }
 
     onReset () {
