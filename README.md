@@ -1,6 +1,9 @@
 # React generaor
 ## npm install -g create-react-app
 
+# react-scripts:
+## react-scripts start : boot the Webpack development server
+
 # React-Router
 ## Guide: https://reacttraining.com/react-router/web/guides/quick-start
 
@@ -24,3 +27,6 @@
 
 # Adding Bootstrap
 ## npm install --save react-bootstrap bootstrap@3
+
+# React fullstack:
+## Concurrently npm i --save-dev concurrently

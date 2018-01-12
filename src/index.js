@@ -5,7 +5,19 @@ import { App} from "./App";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+/**
+ * Fast import to practice
+ */
+// import './component/reactDocs/TickClock'
+// import './component/reactDocs/Toggle'
+// import './component/reactDocs/ConditionalRendering'
+// import './component/reactDocs/ControlledComponent'
+// import './component/reactDocs/UncontrolledComponent'
+import './component/reactDocs/LiftingStateUp'
+
+
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('root')
+// );
+

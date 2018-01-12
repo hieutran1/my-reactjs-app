@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "custom-react-scripts": "^0.2.1",
     "gh-pages": "^0.11.0"
   },
@@ -36,9 +37,13 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "node server.js",
+    "client": "node start-client.js",
+    "startfull": "concurrently \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
