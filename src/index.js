@@ -13,7 +13,8 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 // import './component/reactDocs/ConditionalRendering'
 // import './component/reactDocs/ControlledComponent'
 // import './component/reactDocs/UncontrolledComponent'
-import './component/reactDocs/LiftingStateUp'
+// import './component/reactDocs/LiftingStateUp'
+import "./component/ES6(2015)/TailCalls";
 
 
 // ReactDOM.render(
