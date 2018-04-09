@@ -1,7 +1,5 @@
-import { TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters, toggleTodo } from "./actions";
 import { bindActionCreators, combineReducers } from "redux";
-import { setVisibilityFilter } from "../reactRedux/actions/index";
-import { Provider } from "./C:/Users/hieutran/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-redux";
+import { Provider } from "react-redux";
 
 /**
  * Step 1: define actions
@@ -12,22 +10,22 @@ const TOGGLE_TODO = 'TOGGLE_TODO'
 const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
 
 // action 1
-{
+var actionAddTodo = {
   type: ADD_TODO,
   text: 'kdkdkd'
 }
 // action 2
-{
+var actionToggleTodo = {
   type: TOGGLE_TODO,
   index: 3
 }
 // action 3
-{
+var actionSetVisibilityFilter = {
   type: SET_VISIBILITY_FILTER,
   filter: VisibilityFilters.SHOW_COMPLETED
 }
 // actions 4, 5, 6
-VisibilityFilters = {
+var VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
@@ -75,7 +73,7 @@ var state = {
 /**
  * Step 4: handle actions
  */
-(previousState, action) => newState
+var handleActions = (previousState, action) => newState
 
 // Define Reducer
 const initialState = {

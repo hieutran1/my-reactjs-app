@@ -23,12 +23,15 @@ class TimerView extends React.Component {
 export default class Timer extends React.Component {
     render() {
         var appState = observable({
-            timer: 0
+            timer: 0,
+            resetTimer : function() {
+                appState.timer = 0;
+            }
         });
         
-        appState.resetTimer = function() {
-            appState.timer = 0;
-        };
+        // appState.resetTimer = function() {
+        //     appState.timer = 0;
+        // };
         
         setInterval(function() {
             appState.timer += 1;

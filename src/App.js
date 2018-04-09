@@ -16,6 +16,8 @@ import ThinkInReactRouter from './component/thinkInReact/ThinkInReactRouter';
 import { ReactReduxRouter } from './component/reactRedux/ReactReduxRouter'
 import ReactMobxRouter from "./component/reactMobx/ReactMobxRouter";
 
+import DevTool from "mobx-react-devtools";
+
 export const App = () => (
   <Router>
     <div>

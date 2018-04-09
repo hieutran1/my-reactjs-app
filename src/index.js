@@ -16,10 +16,15 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 // import './component/reactDocs/LiftingStateUp'
 // import "./component/ES6(2015)/TailCalls";
 // import "./component/PureReactRedux/test";
-import  "./component/reactDocs/componentLifecycle";
+// import  "./component/reactDocs/componentLifecycle";
 
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById('root')
-// );
+import "./component/reactMobx/practices/ObservableObject"
+// import "./component/reactMobx/introductionMobxReactIn10Minute/TodoStore"
+// import "./component/reactMobx/introductionMobxReactIn10Minute/ObservableTodoStore"
+import "./component/reactMobx/introductionMobxReactIn10Minute/TodoList"
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 
