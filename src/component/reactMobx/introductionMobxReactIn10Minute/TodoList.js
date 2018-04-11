@@ -68,6 +68,12 @@ observableTodoStore.todos[0].completed = true;
 observableTodoStore.todos[1].task = "try MobX in own project";
 observableTodoStore.todos[0].task = "grok MobX tutorial";
 
+observableTodoStore.pendingRequests++;
+setTimeout(function() {
+    observableTodoStore.addTodo('Random Todo ' + Math.random());
+    observableTodoStore.pendingRequests--;
+}, 2000);
+
 ReactDOM.render(
   <TodoList store={ observableTodoStore } />,
   document.getElementById('root-mobx-react')
