@@ -31,4 +31,4 @@
 # React fullstack:
 ## Concurrently npm i --save-dev concurrently
 
-PR2-commit
+PR1 - commit
